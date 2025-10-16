@@ -202,11 +202,16 @@ def operaciones_basicas(num1, num2):
     producto = num1 * num2
     return suma, resta, division, producto
 
+def convertir_a_decimal(numero):
+    numero = numero.replace("," , ".")
+    numero = float(numero)
+    return numero
+
 #--------Programa principal--------
 
 #Solicitud de ingreso de datos
-numero1 = int(input("Por favor ingrese el primer número para operar: "))
-numero2 = int(input("Por favor ingrese el segundo número para operar: "))
+numero1 = convertir_a_decimal(input("Por favor ingrese el primer número para operar: ")) #Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
+numero2 = convertir_a_decimal(input("Por favor ingrese el segundo número para operar: ")) #Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
 
 if numero2 == 0:
     print("¡El segundo número debe ser distinto de cero!")
@@ -254,11 +259,9 @@ def convertir_a_decimal(numero):
 #--------Programa principal--------
 
 #Solicitud de ingreso de datos
-peso = input("Por favor ingrese el su peso actual (en kilogramos): ")
-altura = input("Por favor ingrese su altura (en metros): ")
-#Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
-peso = convertir_a_decimal(peso)
-altura = convertir_a_decimal(altura)
+peso = convertir_a_decimal(input("Por favor ingrese el su peso actual (en kilogramos): ")) #Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
+altura = convertir_a_decimal(input("Por favor ingrese su altura (en metros): ")) #Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
+
 #Invocación a la función y salida de información
 print(f"\nSu Índice de Masa Corporal (IMC) es: {calcular_imc(peso, altura)}.")
 
@@ -293,9 +296,7 @@ def convertir_a_decimal(numero):
 #--------Programa principal--------
 
 #Solicitud de ingreso de datos
-celsius = input("Por favor ingrese una temperatura en grados Celsius (°C): ")
-#Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
-celsius = convertir_a_decimal(celsius)
+celsius = convertir_a_decimal(input("Por favor ingrese una temperatura en grados Celsius (°C): ")) #Invocación a función que convierte strings a flotantes (por si se ingresaron comas en vez de puntos)
 #Invocación a la función y salida de información
 print(f"\n{celsius}°C equivalen a {celsius_a_farenheit(celsius)} grados Farenheit (°F).")
 

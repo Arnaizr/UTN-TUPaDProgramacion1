@@ -1,6 +1,0 @@
-Papel Higiénico,300,1
-Lavandina,2500,2
-Bolsa Residuos,4000,7
-Papa,584,9
-Batata,213,3
-Sandía,1499.99,20
